@@ -76,6 +76,75 @@ ES importante entender esto antes de escribir una sola línea de código.
 |torneo_id	      |Integer (FK)	         |Torneo en cuestión                |
 |fecha_inscripcion|	DateTime	           |Cuándo se inscribió               |
 
-
-
 Diagrama de Relaciones
+
+Participante  ───< Inscripción >───  Torneo
+
+     │                                  │
+     
+     │                                  │
+     
+     └──────< Batalla >─────────────────┘
+              (participante1, participante2, ganador)
+
+- Un participante puede estar en muchos torneos (a través de Inscripción).
+
+- Un torneo puede tener muchos participantes y muchas batallas. 
+
+- Una batalla siempre pertenece a un torneo y tiene dos participantes y un ganador.
+
+- El top 10 se calcula ordenando a los participantes por nivel_aura de mayor a menor.
+
+# 🗺️ Rutas (Páginas) del MVP
+
+Estas son las rutas que se van implementar en Flask. Cada una corresponde a una función en routes.py y a una plantilla en templates/.
+
+## Rutas Públicas (sin login en el MVP)
+
+|       Ruta          |	  Método  |             Descripción	                    |          Plantilla           |
+|---------------------|-----------|---------------------------------------------|------------------------------|
+|/	                  | GET	      |Dashboard con Top 10 y torneos activos	      |index.html                    |
+|/participantes	      | GET	      |Lista de todos los participantes	            |participantes/lista.html      |
+|/participantes/<id>	| GET	      |Perfil del participante con su historial	    |participantes/detalle.html    |
+|/participantes/nuevo |	GET, POST	|Formulario para registrar un farmer	        |participantes/formulario.html |
+|/torneos	            | GET	      |Lista de torneos (activos y pasados)	        |torneos/lista.html            |
+|/torneos/<id>	      | GET	      |Detalle del torneo: participantes y batallas	|torneos/detalle.html          |
+|/torneos/nuevo	      | GET, POST	|Formulario para crear un torneo	            |torneos/formulario.html       |
+|/batallas	          | GET	      |Historial de batallas	                      |batallas/lista.html           |
+|/batallas/nueva	    | GET, POST	|Registrar resultado de una batalla	          |batallas/formulario.html      |
+|/top10	              | GET	      |Ranking de los 10 mejores farmers	          |top10.html                    |
+
+## Funcionalidades Clave del MVP
+
+<ol>
+  <li>Registrar participantes con nombre, nacionalidad y nivel inicial de aura.</li>
+  <li>Crear torneos con nombre, fechas y estado.</li>
+  <li>Inscribir participantes en torneos.</li>
+  <li>Registrar batallas entre dos participantes de un torneo, indicando quién ganó y cuánta aura ganó.</li>
+  <li>Actualizar el nivel de aura del ganador automáticamente al registrar una batalla.</li>
+  <li>Mostrar el Top 10 ordenado por nivel de aura.</li>
+  <li>Consultar el perfil de un participante con sus batallas y torneos.</li>
+</ol>
+
+## 🚫 ¿Qué NO incluye el MVP? (Para evitar que se desborden)
+
+❌ Autenticación de usuarios (login/registro de cuentas).
+
+❌ Panel de administración con roles.
+
+❌ Comentarios o reacciones.
+
+❌ Gráficos estadísticos avanzados.
+
+❌ API REST para consumo externo.
+
+❌ Edición/eliminación de batallas (solo creación).
+
+Regla de oro del MVP: Si una funcionalidad no es esencial para que el sistema cumpla su propósito principal, se deja para la versión 2.0.
+
+
+
+
+
+
+
