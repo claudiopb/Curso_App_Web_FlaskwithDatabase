@@ -56,19 +56,26 @@ ES importante entender esto antes de escribir una sola línea de código.
 
 ## 3. Batalla
 
-Campo	Tipo	Descripción
-id	Integer (PK)	Identificador único
-torneo_id	Integer (FK)	Torneo al que pertenece
-participante1_id	Integer (FK)	Primer competidor
-participante2_id	Integer (FK)	Segundo competidor
-ganador_id	Integer (FK)	Quién ganó
-aura_ganada	Integer	Puntos de aura obtenidos
-fecha	DateTime	Cuándo se realizó
-4. Inscripción (tabla intermedia)
+|      Campo	    |         Tipo         |	     Descripción                |
+| --------------- | -------------------- | ---------------------------------|
+|id	              |Integer (PK)	         |Identificador único               |
+|torneo_id	      |Integer (FK)	         |Torneo al que pertenece
+|participante1_id	|Integer (FK)	         |Primer competidor
+|participante2_id	|Integer (FK)	         |Segundo competidor
+|ganador_id	      |Integer (FK)	         |Quién ganó
+|aura_ganada	    |Integer	             |Puntos de aura obtenidos
+|fecha	          |DateTime	             |Cuándo se realizó
 
-Campo	Tipo	Descripción
-id	Integer (PK)	Identificador único
-participante_id	Integer (FK)	Participante inscrito
-torneo_id	Integer (FK)	Torneo en cuestión
-fecha_inscripcion	DateTime	Cuándo se inscribió
+
+## 4. Inscripción (tabla intermedia)
+
+|      Campo	    |         Tipo         |	     Descripción                |
+| --------------- | -------------------- | ---------------------------------|
+|id	Integer (PK)	|Identificador         |único                             |
+|participante_id	|Integer (FK)	         |Participante inscrito             |
+|torneo_id	      |Integer (FK)	         |Torneo en cuestión                |
+|fecha_inscripcion|	DateTime	           |Cuándo se inscribió               |
+
+
+
 Diagrama de Relaciones
