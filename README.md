@@ -9,3 +9,4 @@
 
 ## Índice de secciones:
 1. [Introduccion](introduccion.md)
+2. [Instalación y configuraciones](inst_&_set.md)
