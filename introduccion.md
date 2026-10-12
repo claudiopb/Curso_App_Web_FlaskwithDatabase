@@ -1,5 +1,4 @@
-<a href="README.md">INICIO</a>                                                    <a href="README.md">INSTALACION Y CONFIGURACIONES</a>
-
+[INICIO](README.md)                                                     
 
 # 🎯 Características Clave de un MVP
 
@@ -144,6 +143,8 @@ Estas son las rutas que se van implementar en Flask. Cada una corresponde a una 
 ❌ Edición/eliminación de batallas (solo creación).
 
 Regla de oro del MVP: Si una funcionalidad no es esencial para que el sistema cumpla su propósito principal, se deja para la versión 2.0.
+
+ [SIIGUIENTE](inst_&_set.md) 
 
 
 
