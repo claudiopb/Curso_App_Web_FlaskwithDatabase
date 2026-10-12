@@ -1,4 +1,4 @@
-<a href="https://www.w3schools.com/">HOME</a>
+<a href="README.md">INICIO</a>                                                    <a href="README.md">INSTALACION Y CONFIGURACIONES</a>
 
 
 # 🎯 Características Clave de un MVP
