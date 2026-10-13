@@ -6,11 +6,17 @@ Primero devemos checar si python esta instalado y configurar sus variables de en
 
 ## Checar instalacio de python y su versión.
 
-1 .- Habre una termibal en power shell de preferencia como Administrador.
+1 .- Habre una terminal en power shell de preferencia como Administrador.
 
-<img src="./assets/logo.png" alt="Logo del proyecto" width="300"/>
+<img src="./image/power shell.png" alt="Logo del proyecto" width="600"/>
 
-Instala la extensión de Python.
+2.- Ejecutar el interprete de python y si esta bien instaldo debe aparecer al parecido a la siguiente imagen:
+
+<img src="/image/interprete.png" alt="Logo del proyecto" width="600"/>
+
+Si note parace asi es que o no tienes instalado python o notienes configurado el PATH en las variables de entorno en tu sistema 
+
+## Instala la Python.
 
 Instala una versión de Python 3 (para la cual está escrito este tutorial). Las opciones incluyen:
 
