@@ -8,6 +8,7 @@ Primero devemos checar si python esta instalado y configurar sus variables de en
 
 1 .- Habre una termibal en power shell de preferencia como Administrador.
 
+<img src="./assets/logo.png" alt="Logo del proyecto" width="300"/>
 
 Instala la extensión de Python.
 
