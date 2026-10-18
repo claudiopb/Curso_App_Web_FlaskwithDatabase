@@ -66,3 +66,29 @@ Seleccione un intérprete de Python para usar en el entorno.
 VS Code crea una .venvcarpeta en tu espacio de trabajo y selecciona automáticamente el nuevo entorno.
 
 <img src="/image/venv.png" alt="Logo del proyecto" width="600"/>
+
+Abre una terminal y veras que el venv ya esta activado.
+
+como desactivar un entorno virtual vnev con el comando deactivate
+
+Desactivar venv:
+   ```sh
+   deactivate
+   ```
+para volverlo a activar:
+   ```sh
+   .venv\Scripts\activate.bat
+   ```
+
+# Instala Flask en el entorno virtual utilizando uno de estos métodos:
+
+##Uso de la interfaz de usuario de administración de paquetes:
+
+Usando la terminal:
+
+Ejecutar terminal: Crear nueva terminal ( Ctrl+Mayús+` ) desde la paleta de comandos, lo que crea una terminal y activa automáticamente el entorno virtual. Luego ejecute:
+
+   ```sh
+   python -m pip install flask
+   ```
+
