@@ -36,14 +36,33 @@ En esta sección, crearás un entorno virtual donde se instalará Flask. El uso 
 
 La extensión Python Environments admite varios tipos de entornos, incluidos venv, conda, poetry y otros. Este tutorial utiliza venv porque está integrado en Python y no requiere herramientas adicionales. Los pasos para otros tipos de entornos son similares; consulte la sección «Crear entornos» para obtener más detalles.
 
-En su sistema de archivos, cree una carpeta para este curso, como por ejemplo hello_flask: .
+En su sistema de archivos, cree una carpeta para este curso, como por ejemplo aura_tracker:
 
-Abra esta carpeta en VS Code navegando a la carpeta en una terminal y ejecutando code ., o ejecutando VS Code y usando el comando Archivo > Abrir carpeta .
+<img src="/image/crear directorio.png" alt="Logo del proyecto" width="600"/>
+
+
+Abra esta carpeta en VS Code navegando a la carpeta en una terminal y ejecutando code ., o ejecutando VS Code y usando el comando Archivo > Abrir carpeta:
+
+<img src="/image/abrir_con_vsc.png" alt="Logo del proyecto" width="600"/>
 
 Crea un entorno virtual utilizando el comando Python: Create Environment :
 
 Abre la paleta de comandos ( Ctrl+Mayús+P )
+
+<img src="/image/create_environment.png" alt="Logo del proyecto" width="600"/>
+
 Busque y seleccione Python: Crear entorno
 Seleccione Venv para crear un entorno venv.
+
+<img src="/image/crea_venv.png" alt="Logo del proyecto" width="600"/>
+
 Seleccione un intérprete de Python para usar en el entorno.
+
+<img src="/image/selec_python.png" alt="Logo del proyecto" width="600"/>
+
+<img src="/image/creando_venv.png" alt="Logo del proyecto" width="600"/>
+
+
 VS Code crea una .venvcarpeta en tu espacio de trabajo y selecciona automáticamente el nuevo entorno.
+
+<img src="/image/venv.png" alt="Logo del proyecto" width="600"/>
