@@ -146,6 +146,8 @@ Regla de oro del MVP: Si una funcionalidad no es esencial para que el sistema cu
 
  [SIIGUIENTE](inst_&_set.md) 
 
+ <p align="left">(<a href="#readme-top">back to top</a>)</p><p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 
