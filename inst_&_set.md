@@ -80,15 +80,46 @@ para volverlo a activar:
    .venv\Scripts\activate.bat
    ```
 
-# Instala Flask en el entorno virtual utilizando uno de estos métodos:
+# Paso 1: Instala Flask en el entorno virtual utilizando uno de estos métodos:
 
-##Uso de la interfaz de usuario de administración de paquetes:
+## Uso de la interfaz de usuario de administración de paquetes:
 
 Usando la terminal:
 
 Ejecutar terminal: Crear nueva terminal ( Ctrl+Mayús+` ) desde la paleta de comandos, lo que crea una terminal y activa automáticamente el entorno virtual. Luego ejecute:
 
+## Instalar las librerías esenciales para Flask, MySQL y migraciones
+  
    ```sh
-   python -m pip install flask
+   pip install Flask Flask-SQLAlchemy Flask-Migrate PyMySQL python-dotenv Flask-WTF
+   ```
+
+<img src="/image/instal_flask.png" alt="Logo del proyecto" width="600"/>
+
+# Paso 2: El archivo requirements.txt
+
+Para asegurarnos de que PythonAnywhere (y cualquier otro servidor) sepas exactamente qué instalar, guarda las dependencias en un archivo:
+
+   ```sh
+   pip freeze > requirements.txt
+   ```
+
+## 💻 Codificando la Base (Configuración y Modelos)
+Crea la estructura de carpetas que diseñamos (app/, app/templates/, app/static/, etc.) y vamos a rellenar los primeros archivos clave.
+
+1. app/config.py (Configuración de la Base de Datos)
+Aquí conectaremos Flask con tu MySQL local. Usaremos variables de entorno por seguridad.
+
+   ```sh
+   import os
+   from dotenv import load_dotenv
+
+   load_dotenv()
+
+   class Config:
+       SECRET_KEY = os.environ.get('SECRET_KEY') or 'clave-secreta-super-dura'
+       # Configuración de conexión MySQL usando PyMySQL: mysql+pymysql://usuario:contraseña@servidor/nombre_base_datos
+       SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'mysql+pymysql://root:@localhost/aura_tracker_db'
+       SQLALCHEMY_TRACK_MODIFICATIONS = False
    ```
 
