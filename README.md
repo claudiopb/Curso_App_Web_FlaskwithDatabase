@@ -10,3 +10,5 @@
 ## Índice de secciones:
 1. [Introduccion](introduccion.md)
 2. [Instalación y configuraciones](inst_&_set.md)
+3. [Codificando la Base](Codificacion_bd.md)
+
