@@ -131,5 +131,7 @@ class Battle(db.Model):
     farmer_2 = db.relationship('Farmer', foreign_keys=[farmer_2_id])
     ganador = db.relationship('Farmer', foreign_keys=[ganador_id])
  ```
+¿Qué gestor de MySQL estás usando localmente (XAMPP, MySQL Workbench o Docker)?
 
+creado una base de datos vacía llamada aura_tracker_db para que Flask pueda conectarse
 
