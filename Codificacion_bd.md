@@ -65,12 +65,71 @@ Desglose por partes:
 
 ## 💡 ¿Por qué se hace de esta manera (Buenas Prácticas)?
 
-- n desarrollo local: Como estás probando en tu PC, no pasa nada si usa la clave por defecto ('clave-secreta-super-dura').
+- En desarrollo local: Como estás probando en tu PC, no pasa nada si usa la clave por defecto ('clave-secreta-super-dura').
 - En producción (cuando lo subas a internet, por ejemplo, a PythonAnywhere): Nunca debes subir contraseñas ni claves secretas escritas directamente en el código por seguridad. En su lugar, configuras una variable de entorno real en el servidor (un código larguísimo y aleatorio). Al hacer esto, Flask ignorará el texto por defecto y tomará la clave ultra segura del servidor automáticamente.
 
 ## 2. app/models.py (Modelos de la BD)
 Aquí definiremos las tablas con Flask-SQLAlchemy. Esto mapeará tus tablas de MySQL a clases de Python puras:
 
 ```sh
+from datetime import datetime
+from app import db
 
+class Farmer(db.Model):
+    __tablename__ = 'farmers'
+    
+    id = db.Column(db.Integer, primary_key=True)
+    nombre = db.Column(db.String(100), nullable=False)
+    red_instagram = db.Column(db.String(100), nullable=True)
+    red_tiktok = db.Column(db.String(100), nullable=True)
+    aura_acumulada = db.Column(db.Integer, default=0)
+    batallas_ganadas = db.Column(db.Integer, default=0)
+    
+    # Relación con la tabla intermedia de torneos
+    torneos_participaciones = db.relationship('TournamentParticipant', backref='farmer', lazy=True)
+    
+    def __repr__(self):
+        return f'<Farmer {self.nombre} - Aura: {self.aura_acumulada}>'
+
+
+class Tournament(db.Model):
+    __tablename__ = 'torneos'
+    
+    id = db.Column(db.Integer, primary_key=True)
+    nombre = db.Column(db.String(150), nullable=False)
+    descripcion = db.Column(db.Text, nullable=True)
+    fecha = db.Column(db.DateTime, default=datetime.utcnow)
+    
+    participantes = db.relationship('TournamentParticipant', backref='torneo', lazy=True)
+    batallas = db.relationship('Battle', backref='torneo', lazy=True)
+
+
+class TournamentParticipant(db.Model):
+    __tablename__ = 'torneos_participantes'
+    
+    id = db.Column(db.Integer, primary_key=True)
+    # Ahora apunta a 'farmers.id'
+    farmer_id = db.Column(db.Integer, db.ForeignKey('farmers.id'), nullable=False)
+    torneo_id = db.Column(db.Integer, db.ForeignKey('torneos.id'), nullable=False)
+    lugar_obtenido = db.Column(db.Integer, nullable=True)  # 1°, 2°, 3°, etc.
+
+
+class Battle(db.Model):
+    __tablename__ = 'batallas'
+    
+    id = db.Column(db.Integer, primary_key=True)
+    # Apuntan a la tabla 'farmers.id'
+    farmer_1_id = db.Column(db.Integer, db.ForeignKey('farmers.id'), nullable=False)
+    farmer_2_id = db.Column(db.Integer, db.ForeignKey('farmers.id'), nullable=False)
+    ganador_id = db.Column(db.Integer, db.ForeignKey('farmers.id'), nullable=False)
+    aura_en_juego = db.Column(db.Integer, nullable=False)
+    torneo_id = db.Column(db.Integer, db.ForeignKey('torneos.id'), nullable=True)
+    fecha = db.Column(db.DateTime, default=datetime.utcnow)
+
+    # Relaciones apuntando al modelo Farmer
+    farmer_1 = db.relationship('Farmer', foreign_keys=[farmer_1_id])
+    farmer_2 = db.relationship('Farmer', foreign_keys=[farmer_2_id])
+    ganador = db.relationship('Farmer', foreign_keys=[ganador_id])
  ```
+
+
