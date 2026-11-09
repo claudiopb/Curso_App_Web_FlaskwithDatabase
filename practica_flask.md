@@ -14,5 +14,12 @@ Antes de escribir código, asegúrate de tener instalado en las computadoras del
 - MySQL Server (o XAMPP/WampServer que lo incluya).
 - MongoDB (puede ser local o un cluster gratuito en MongoDB Atlas).
 
-1. Instalación de Dependencias
+## 1. Crear un fichero en donde guardarmos la practica y creamos un [entorno virtual](inst_&_set.md).
+
+## 2. Instalación de Dependencias
 Los alumnos deben abrir su terminal (o consola) e instalar Flask y los conectores para bases de datos ejecutando:
+
+  ```sh
+  pip install flask pymysql mysql-connector-python pymongo
+```
+
