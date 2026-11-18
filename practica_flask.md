@@ -51,8 +51,9 @@ Antes de pasar al código completo de la práctica demostrativa, veamos una estr
 
 ```sh
 from flask import Flask, render_template, request, redirect, url_for
+```
 
-
+```sh
 app = Flask(__name__)
 
 # ==========================================
@@ -69,6 +70,12 @@ if __name__ == '__main__':
     # Ejecutamos el servidor en modo debug para desarrollo escolar
     app.run(debug=True)
 ```
+Una vez creados el archivo app.py y la carpeta templates (con el archivo index.html y su estructura básica de HTML en su interior), es momento de ejecutar la aplicación para comprobar su funcionamiento. Para ello, abre la terminal —de preferencia la integrada en Visual Studio Code— y escribe el siguiente comando:
+
+```sh
+python -m flask run
+```
+
 podemos darnos cuenta que para ejecutar la aplicacion es necesario tumbar y levantar el servidor de flask par que se visua
 
 Paso 1: El archivo principal (app.py)
