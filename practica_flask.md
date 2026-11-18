@@ -76,6 +76,8 @@ Una vez creados el archivo app.py y la carpeta templates (con el archivo index.h
 python -m flask run
 ```
 
+<img src="/image/ejecucion_apppy.png" alt="Logo del proyecto" width="600"/>
+
 podemos darnos cuenta que para ejecutar la aplicacion es necesario tumbar y levantar el servidor de flask par que se visua
 
 Paso 1: El archivo principal (app.py)
