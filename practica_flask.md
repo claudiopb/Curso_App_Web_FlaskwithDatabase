@@ -47,6 +47,30 @@ ___MongoDB___ guarda la información en documentos (formato similar a JSON, llam
 
 ## Parte 2: Creación del Código
 
+Antes de pasar al código completo de la práctica demostrativa, veamos una estructura básica del archivo app.py para entender cómo indicarle a Flask las rutas que le dan acceso a los documentos HTML cargados en el servidor.
+
+```sh
+from flask import Flask, render_template, request, redirect, url_for
+
+
+app = Flask(__name__)
+
+# ==========================================
+# RUTAS DE LA APLICACIÓN (CONTROLADOR)
+# ==========================================
+
+@app.route('/')
+def index():
+    """Ruta de Bienvenida: Muestra la estructura básica y el formulario."""
+    return render_template('index.html')
+
+
+if __name__ == '__main__':
+    # Ejecutamos el servidor en modo debug para desarrollo escolar
+    app.run(debug=True)
+```
+podemos darnos cuenta que para ejecutar la aplicacion es necesario tumbar y levantar el servidor de flask par que se visua
+
 Paso 1: El archivo principal (app.py)
 
 Este archivo contiene las rutas web y la lógica para conectarnos a ambas bases de datos simultáneamente.
